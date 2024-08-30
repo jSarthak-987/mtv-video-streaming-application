@@ -7,7 +7,7 @@ This project is designed to handle file uploads, stream HLS media, and interact 
 This project uses docker componse to orchastrate all the individual components, so to run the application, it's recommended to run using docker compose (Instructions are given after backend section). For running frontend or backend individually, run them either using docker itself, or outside of docker environment. For that, instructions are given in each of the individual sections.
 
 
-=======================================================================================================
+==========================================================================
 
 ## Front End Application Structure (NextJS)
 
@@ -136,7 +136,7 @@ web_app/
 
 
 
-=======================================================================================================
+==========================================================================
 
 ## Back End Application Structure (Golang)
 
@@ -331,7 +331,7 @@ Adjustments may be needed if running in different environments or with specific 
 
 
 
-=======================================================================================================
+==========================================================================
 
 ## Running the Application Using Docker Compose (Recommended, especially for linux host)
 
