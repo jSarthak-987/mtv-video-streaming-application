@@ -453,4 +453,4 @@ This setup assumes that all dependencies and configurations are correctly define
 
 ________________________________________________________________________________
 
-*Developed by Sarthak Joshi as part of Manhattan Tech Ventures Assignment.*
+*Developed by Sarthak Joshi as a part of the Manhattan Tech Ventures Assignment.*
