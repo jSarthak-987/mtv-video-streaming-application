@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Uploader</title>
+    <script src="https://cdn.jsdelivr.net/npm/tus-js-client@latest/dist/tus.js"></script>
+</head>
+<body>
+    <input type="file" id="fileInput" />
+    <button onclick="uploadFile()">Upload</button>
+    <ul id="uploadList"></ul>
+
+    <script>
+        function uploadFile() {
+            const file = document.getElementById("fileInput").files[0];
+            const upload = new tus.Upload(file, {
+                endpoint: "http://localhost:8080/files/",
+                onError: function(error) {
+                    console.error("Failed because: " + error);
+                    console.error("Error details: ", error.originalRequest);
+                },
+                onProgress: function(bytesUploaded, bytesTotal) {
+                    const percentage = (bytesUploaded / bytesTotal * 100).toFixed(2);
+                    console.log(bytesUploaded, bytesTotal, percentage + "%");
+                },
+                onSuccess: function() {
+                    console.log("Download %s from %s", upload.file.name, upload.url);
+                    addToUploadList(upload.file.name, "uploaded");
+                }
+            });
+            upload.start();
+        }
+
+        function addToUploadList(fileName, status) {
+            const ul = document.getElementById("uploadList");
+            const li = document.createElement("li");
+            li.textContent = `${fileName}: ${status}`;
+            ul.appendChild(li);
+        }
+    </script>
+</body>
+</html>

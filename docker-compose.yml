@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./web_app
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    # environment:
+    #   - NEXT_PUBLIC_API_URL=http://backend:8080
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - '8080:8080'
+    environment:
+      - MONGO_URI=mongodb://mongo:27017 # Updated to reference the MongoDB service within Docker
+      - UPLOAD_PATH=./uploads
+      - TRANSCODE_PATH=./output
+      - WP_COUNT=2
+      - DB_NAME=hls_media
+    depends_on:
+      - mongo
+    restart: always  # Restart policy to ensure the SSE endpoint stays up
+
+  mongo:
+    image: mongo:5.0  # Use an appropriate version of MongoDB
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

@@ -1,0 +1,14 @@
+# Ignore the Go cache
+/go
+/bin
+/pkg
+/build
+
+# Ignore .env file
+.env
+
+# Ignore unnecessary files
+.git
+Dockerfile
+.dockerignore
+.vscode
