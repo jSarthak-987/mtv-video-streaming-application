@@ -2,9 +2,9 @@
 
 A Next.js/Golang application for uploading, transcoding, and streaming videos. This app allows users to upload video files, monitor the upload and transcoding progress, and stream the videos once transcoded.
 
-This project is designed to handle file uploads, stream HLS media, and interact with a MongoDB database. The server is built using Go version `go1.20`, and front end is built using Next.js version 18, and both of them can be easily run inside individual Docker containers for consistent and isolated environments.
+This project is designed to handle file uploads, stream HLS media, and interact with a MongoDB database. The server is built using Go version `go1.20`, and the front end is built using Next.js version 18. Both can be easily run inside individual Docker containers for consistent and isolated environments.
 
-This project uses docker componse to orchastrate all the individual components, so to run the application, it's recommended to run using docker compose (Instructions are given after backend section). For running frontend or backend individually, run them either using docker itself, or outside of docker environment. For that, instructions are given in each of the individual sections.
+This project uses Docker Compose to orchestrate all the individual components, so it's recommended that you run the application using Docker Compose (Instructions are given after the backend section). For running the frontend or backend individually, run them either using Docker itself or outside of the Docker environment. Instructions are given in each of the individual sections.
 
 
 ==========================================================================
