@@ -221,11 +221,11 @@ The backend is responsible for handling file uploads, managing transcoding opera
 
 Clone the repository to your local machine:
 
-    ```bash
-    git clone https://github.com/jSarthak-987/mtv-video-streaming-application.git
-    cd manhattan-tech-ventures
-    cd web_app
-    ```
+```
+git clone https://github.com/jSarthak-987/mtv-video-streaming-application.git
+cd manhattan-tech-ventures
+cd web_app
+```
 
 ### 2. Build the Docker Image
 
@@ -262,7 +262,7 @@ curl http://localhost:8080
 
 If your application requires environment variables, you can pass them to the Docker container in two ways:
 
---  **Option 1: Pass Environment Variables Directly**:
+-  **Option 1: Pass Environment Variables Directly**:
     Run the container with environment variables passed using the `-e` flag:
 
     ```
@@ -270,7 +270,7 @@ If your application requires environment variables, you can pass them to the Doc
     -e MONGO_URI="mongodb://localhost:27017" my-go-server
     ```
 
--- **Option 2: Use an Environment File**
+- **Option 2: Use an Environment File**
     Create a `.env` file with your environment variables:
 
     ```
